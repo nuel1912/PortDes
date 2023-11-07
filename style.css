@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Everything regarding container... */
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(img/night.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #fff;
+}
+.sub-container, .add1, .add2, .add3 {
+    width: 100%;
+    height: 100vh;
+    background: url(img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: 0.5s ease-in-out;
+    border-bottom: 1px solid #fff;
+}
+.add1 {
+    background: url(img/gd2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.add2 {
+    background: url(img/web.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.add3 {
+    background: url(img/uix.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.profile {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url(img/grunge.jpg);
+    /* background: url(img/grunge.jpg); */
+    position: relative;
+}
+
+
+
+/* Menu Icon... */
+.menu {
+    display: none;  
+}
+
+/* Sidebar... */
+.sidebar {
+    width: 70px;
+    height: 100vh;
+    padding: 12px;
+    background: rgba(10, 10, 10, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.5s ease-in-out all;
+    border-left: 1px solid #e2e0e0;
+}
+
+
+/* The Profile picture in the side-bar... */
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.user img {
+    width: 45px;
+    margin: auto;
+    border-radius: 50%;
+    border: 1px solid #e1e8ed;
+}
+
+/* List of social links... */
+ul {
+    list-style: none;
+    width: 80%;
+    margin: auto;
+}
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 15px auto;
+    cursor: pointer;
+}
+ul li a {
+    color: #e2e0e0;
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+}
+ul img {
+    width: 25px;
+    transition: 0.5s ease-in-out;
+}
+ul img:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes sayHi {
+    from {
+        transform: rotate(-20deg);
+    }
+    to {
+        transform: rotate(20deg);
+    }
+}
+.hi {
+    animation: sayHi 1s linear infinite alternate;
+}
+
+
+.text-box {
+    color: #e2e0e0;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto auto auto auto;
+    /* padding: 15px 10px; */
+}
+.text-box h1 {
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+.text-box h6 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+
+/* The Nav-section on Sub-container... */
+nav {
+    width: 80%;
+    margin: auto;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+nav ol {
+    flex: 1;
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ol li {
+    color: #e2e0e0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    list-style: none;
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+nav ol li:hover {
+    font-weight: 700;
+    transform: translateY(-3px);
+}
+.act {
+    font-weight: 800;   
+}
+.line {
+    width: 3%;
+    height: 3px;
+    border: none;
+    padding: 0;
+    background: #e2e0e0;
+    cursor: default;
+}
+.active {
+    font-weight: 800;
+}
+
+
+/* Sub-container's presumed sidebar - It didn't work out...😅 */
+.side2 {
+    width: 100%;
+    height: 100vh;
+    background: #010a1765;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For Start Nav-link... */
+.sta h2 {
+    color: #e2e0e0;
+    font-size: 120px;
+    padding: 0 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.sta span {
+    background: #e2e0e0;
+    border-radius: 30px;
+    color: #010a17;
+    padding: 0 16px;
+}
+
+/* When in another Nav-link, Start should display none...*/
+.sta.active{
+    display: none;
+}
+
+
+.gd2, .we2, .uix2 {
+    display: none;
+}
+.gd, .we, .ix {
+    display: flex;
+    width: 80%;
+    max-height: 1000px;
+    text-align: left;
+    color: #e2e0e0;
+    box-shadow: 0 8px 30px 0 rgba(0,0,0,0.8);
+    background: rgba(1, 11, 24, 0.5);
+    margin-bottom: 30px;
+}
+.we {
+    width: 90%;
+}
+.gd h2, .we h2, .ix h2 {
+    font-size: 60px;
+}
+.gd p, .we p, .ix p {    
+    max-width: 500px;
+    font-weight: 500;
+    margin: 10px 0 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.text, .images {
+    flex-basis: 65%;
+    overflow: hidden;
+}
+.images {
+}
+.text {
+    border-left: 1px solid #e2e0e0;
+    border-bottom: 1px solid #e2e0e0;
+    padding: 45px 25px 0;
+    position: relative;
+}
+
+.text .points {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto 25px;
+}
+.text .points li {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e2e0e0;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* For the first circle to show active... */
+.dark {
+    background: #e2e0e0;
+    border: none;
+}
+
+/* For other circles to display active when clicked on... */
+.light {
+    background: #e2e0e0;
+    border: none;
+    transition: 0.5s ease-in-out;
+}
+
+/* The images of proof... */
+.images img {
+    width: 100%;
+}
+.zoom {
+    animation: zoomout 0.5s linear;
+}
+@keyframes zoomout {
+    0% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.roe {
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For the profile image... */
+.profimg {
+    width: 400px;
+    margin: auto 25px;
+    border-radius: 50%;
+    border: 1px solid #e2e0e0;
+}
+.roe .name {
+    color: #eeecec;
+}
+.roe .name h2 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+.roe .name p {
+    color: #e2e0e0;
+    font-size: 20px;
+    /* max-width: 750px; */
+    letter-spacing: 1px;
+}
+
+/* The box containing the social media handles... */
+.roe .box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* flex-direction: column; */
+    margin: 15px auto auto auto;
+    gap: 15px;
+}
+
+/* Just to be able flex the text alongside each handle... */
+.roe .semi-box {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the social text... */
+.roe h4 {
+    color: #e2e0e0;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* The boxes containg the handles... */
+.roe .boxes {
+    width: 40px;
+    height: 40px;
+    background: #e2e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* The little lines at the top of each box to be used for hover effect... */
+.roe .boxes .bo1, .roe .boxes .bo2, .roe .boxes .bo3 {
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(#C13584, #F77737);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.8s ease-in-out all;
+}
+.roe .boxes .bo2, .roe .boxes .bo3 {
+    background: #1877f2;
+}
+.roe .boxes .bo3 {
+    background: #010a17;
+}
+
+/* The handle icons themselves... */
+.roe .boxes img {
+    width: 20px;
+    z-index: 1;
+}
+
+/* To hide the white colored icons... */
+.roe .boxes .insta2, .roe .boxes .fb, .roe .boxes .git {
+    display: none;
+}
+
+/* To hide the colored icons on hover... */
+.roe .boxes:hover .insta1, .roe .boxes:hover .fb2, .roe .boxes:hover .git2 {
+    display: none;
+}
+
+/* To display the white colored icons on hover... */
+.roe .boxes:hover .insta2, .roe .boxes:hover .fb, .roe .boxes:hover .git {
+    display: block;
+}
+
+/* To increase the height of the little lines on hover which then become the background of the icons... */
+.roe .boxes:hover .bo1, .roe .boxes:hover .bo2, .roe .boxes:hover .bo3 {
+    height: 40px;
+    background: linear-gradient(#C13584, #F77737);
+    border-bottom: 1px solid #e2e0e0;
+}
+.roe .boxes:hover .bo2 {
+    background: #1877f2;
+}
+.roe .boxes:hover .bo3 {
+    background: #010a17;
+}
+
+
+/* The Copyright or Creation date and staying Focused on Jesus! */
+.profile .cr {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto 10px auto;
+
+}
+.cr hr {
+    color: #e2e0e0;
+    width: 70%;
+    height: 1px;
+    border: 1px dashed #e1e8ed;
+}
+.cr p {
+    color: #e2e0e0;
+    margin: auto 10px;
+    width: 50%;
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .text-box h1 {
+        font-size: 40px;
+    }
+    .sidebar {
+        /* height: 0; */
+        position: absolute;
+        right: -100px;
+        transition: all 1s ease-in-out;
+        /* display: none; */
+    }
+    .menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 24px 20px auto auto;
+        z-index: 1;
+    }
+    .menu .line {
+        background: #e2e0e0;
+        height: 3px;
+        width: 40px;
+        margin: 12px;
+    }
+    .sidebar.open {
+        display: flex;
+        width: 110px;
+        right: 0;
+        /* transition: 1s ease-in-out all; */
+    }
+
+
+    nav ol {
+        width: 50%;
+    }
+    nav ol li {
+        font-size: 12px;
+        margin: auto 4px auto 4px;
+    }
+
+
+    .sta h2 {
+        font-size: 50px;
+    }
+
+    .gd, .we, .ix {
+        flex-direction: column;
+        text-align: center;
+    }
+    .gd h2, .we h2, .ix h2 {
+        font-size: 30px;
+    }
+    .gd p, .we p, .ix p {
+        font-size: 16px;
+    }
+    .text {
+        
+    }
+
+
+    .roe {
+        flex-direction: column;
+    }
+    .roe .name {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .roe .name h2 {
+        font-size: 24px;
+    }
+    .roe .name p {
+        font-size: 16px;
+        max-width: 400px;
+        margin: auto;
+    }
+    .profimg {
+        width: 300px;
+    }
+    .roe .box {
+        justify-content: center;
+    }
+    .roe h4 {
+        display: none;
+    }
+
+
+
+    .cr hr {
+        width: 50%;
+    }
+    .cr p {
+        width: 100%;
+    }
+}
