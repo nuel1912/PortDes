@@ -65,9 +65,9 @@ body::-webkit-scrollbar {
 .sidebar {
     width: 70px;
     height: 100vh;
-    padding: 12px;
-    background: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(5px);
+    /* padding: 12px; */
+    background: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(3px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,7 +75,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0;
     right: 0;
-    transition: 0.5s ease-in-out all;
+    /* transition: 0.5s ease-in-out all; */
     border-left: 1px solid #e2e0e0;
 }
 
@@ -98,12 +98,12 @@ body::-webkit-scrollbar {
 }
 
 /* List of social links... */
-ul {
+.sidebar ul {
     list-style: none;
     width: 80%;
     margin: auto;
 }
-ul li {
+.sidebar ul li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,17 +111,17 @@ ul li {
     margin: 15px auto;
     cursor: pointer;
 }
-ul li a {
+.sidebar ul li a {
     color: #e2e0e0;
     display: block;
     text-decoration: none;
     white-space: nowrap;
 }
-ul img {
+.sidebar ul img {
     width: 25px;
     transition: 0.5s ease-in-out;
 }
-ul img:hover {
+.sidebar ul img:hover {
     transform: translateY(-5px);
 }
 
@@ -140,6 +140,7 @@ ul img:hover {
 
 .text-box {
     color: #e2e0e0;
+    letter-spacing: 1px;
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -251,7 +252,6 @@ nav ol li:hover {
 .gd, .we, .ix {
     display: flex;
     width: 80%;
-    max-height: 1000px;
     text-align: left;
     color: #e2e0e0;
     box-shadow: 0 8px 30px 0 rgba(0,0,0,0.8);
@@ -261,10 +261,35 @@ nav ol li:hover {
 .we {
     width: 90%;
 }
-.gd h2, .we h2, .ix h2 {
+
+.text, .images {
+    flex-basis: 50%;
+    overflow: hidden;
+}
+.images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text {
+    border-left: 1px solid #e2e0e0;
+    border-bottom: 1px solid #e2e0e0;
+    padding: 25px 0 0 20px;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 200px;
+}
+.text:nth-child(1) {
+    gap: 15px;
+}
+
+.texts h2, .texts h2, .ix h2 {
     font-size: 60px;
 }
-.gd p, .we p, .ix p {    
+.texts p, .texts p, .ix p {    
     max-width: 500px;
     font-weight: 500;
     margin: 10px 0 15px;
@@ -272,29 +297,20 @@ nav ol li:hover {
     letter-spacing: 1px;
 }
 
-.text, .images {
-    flex-basis: 65%;
-    overflow: hidden;
-}
-.images {
-}
-.text {
-    border-left: 1px solid #e2e0e0;
-    border-bottom: 1px solid #e2e0e0;
-    padding: 45px 25px 0;
-    position: relative;
-}
-
 .text .points {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: auto 25px;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 0 0 5px;
+    list-style: none;
+}
+.text .points2 {
+    /* margin: auto auto 16px;
+    padding: 0 0 0 50px; */
 }
 .text .points li {
     display: inline-block;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     border: 1px solid #e2e0e0;
     border-radius: 50%;
     margin-right: 10px;
@@ -408,7 +424,7 @@ nav ol li:hover {
     top: 0;
     transition: 0.8s ease-in-out all;
 }
-.roe .boxes .bo2, .roe .boxes .bo3 {
+.roe .boxes .bo2 {
     background: #1877f2;
 }
 .roe .boxes .bo3 {
@@ -493,15 +509,15 @@ nav ol li:hover {
         display: block;
         position: absolute;
         top: 0;
-        right: 0;
-        margin: 24px 20px auto auto;
+        left: 0;
+        margin: 24px auto auto 20px;
         z-index: 1;
     }
     .menu .line {
         background: #e2e0e0;
         height: 3px;
-        width: 40px;
-        margin: 12px;
+        width: 28px;
+        margin: 6px;
     }
     .sidebar.open {
         display: flex;
@@ -518,6 +534,9 @@ nav ol li:hover {
         font-size: 12px;
         margin: auto 4px auto 4px;
     }
+    nav ol li:hover {
+        transform: none;
+    }
 
 
     .sta h2 {
@@ -528,19 +547,23 @@ nav ol li:hover {
         flex-direction: column;
         text-align: center;
     }
-    .gd h2, .we h2, .ix h2 {
+    .texts h2, .texts h2, .ix h2 {
         font-size: 30px;
     }
-    .gd p, .we p, .ix p {
+    .texts p, .texts p, .ix p {
         font-size: 16px;
+        margin: 4px;
     }
     .text {
-        
+        gap: 20px;
+    }
+    .text .points {
+        padding: 0;
     }
 
 
     .roe {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .roe .name {
         text-align: center;
@@ -559,8 +582,40 @@ nav ol li:hover {
     }
     .roe .box {
         justify-content: center;
+        margin-top: 8px;
     }
     .roe h4 {
+        display: none;
+    }
+    .roe .boxes {
+        width: 30px;
+        height: 30px;
+    }
+    /* .roe .boxes:nth-child(1) {
+        background: linear-gradient(#C13584, #F77737);
+    } */
+    .roe .boxes .bo1, .roe .boxes .bo2, .roe .boxes .bo3 {
+        width: 30px;
+        height: 29px;
+    }
+    .roe .boxes img {
+        width: 15px;
+    }
+
+    .roe .boxes .insta2, .roe .boxes .fb, .roe .boxes .git {
+        display: block;
+    }
+
+    .roe .boxes .insta1, .roe .boxes .fb2, .roe .boxes .git2 {
+        display: none;
+    }
+
+    .roe .boxes:hover .insta2, .roe .boxes:hover .fb, .roe .boxes:hover .git {
+        display: none;
+    }
+
+
+    .roe .boxes:hover .bo1, .roe .boxes:hover .bo2, .roe .boxes:hover .bo3 {
         display: none;
     }
 
@@ -571,5 +626,130 @@ nav ol li:hover {
     }
     .cr p {
         width: 100%;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .user img {
+        width: 35px;
+        /* margin-top: 15px; */
+    }
+    .sidebar ul img {
+        width: 20px;
+    }
+    .text-box h1 {
+        font-size: 32px;
+        margin-bottom: 4px;
+    }
+    .text-box h6 {
+        font-size: 16px;
+    }
+    .sidebar {
+        /* height: 0; */
+        /* position: absolute; */
+        right: -100px;
+        backdrop-filter: blur(5px);
+        border: none;
+        transition: all 1s ease-in-out;
+    }
+    .menu {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 16px auto auto 16px;
+        z-index: 1;
+    }
+    .menu .line {
+        background: #e2e0e0;
+        height: 3px;
+        width: 25px;
+        margin: 5px;
+    }
+    .sidebar.open {
+        display: flex;
+        width: 60px;
+        right: 0;
+        /* transition: 1s ease-in-out all; */
+    }
+
+
+    nav ol {
+        width: 25%;
+    }
+    nav ol li {
+        font-size: 12px;
+        margin: auto 4px auto 4px;
+    }
+
+
+    .sta h2 {
+        font-size: 35px;
+    }
+
+    .gd, .we, .ix {
+        flex-direction: column;
+        text-align: center;
+    }
+    .texts h2, .texts h2, .ix h2 {
+        font-size: 25px;
+    }
+    .texts p, .texts p, .ix p {
+        font-size: 15px;
+    }
+    .text {
+        border: none;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 12px;
+    }
+    .text .points {
+        /* display: none; */
+        margin-bottom: 8px;
+    }
+    .text .points li {
+        width: 10px;
+        height: 10px;
+    }
+
+    .images img {
+        width: 100%;
+    }
+
+
+    .roe {
+        /* flex-direction: column; */
+    }
+    .roe .name {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .roe .name h2 {
+        font-size: 24px;
+    }
+    .roe .name p {
+        font-size: 15px;
+        max-width: 400px;
+        margin: auto;
+    }
+    .profimg {
+        width: 240px;
+    }
+    .roe .box {
+        justify-content: center;
+    }
+    .roe h4 {
+        display: none;
+    }
+
+
+
+    .cr hr {
+        width: 75%;
+    }
+    .cr p {
+        width: 100%;
+        font-size: 12px;
     }
 }
