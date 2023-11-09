@@ -31,11 +31,19 @@ let banner2 = document.querySelector("#banner2");
 
 // For each paragraph on Graphics...
 let first = document.querySelector("#first");
+let first2 = document.querySelector("#first2");
+let first3 = document.querySelector("#first3");
 
 
+// For each paragraph on Web...
+let second = document.querySelector("#second");
+let second2 = document.querySelector("#second2");
+let second3 = document.querySelector("#second3");
+
+
+// Function for the Menu Icon...
 menu.addEventListener("click", function () {
     sidebar.classList.toggle("open");
-    
 })
 
 
@@ -69,18 +77,19 @@ graphics.addEventListener("click", function () {
     
     // Commands for when one is active on Graphics section...
     graphics.classList.add("active");
-    start.classList.remove("active");
+    // start.classList.remove("active");
     start.classList.remove("act");
     web.classList.remove("active");
     uix.classList.remove("active");
 
-    // edit.textContent = "Graphic Design"
+    // Commands to display the contents of Graphics section and hide unrelated parts...
     gd.classList.add("gd");
-    sta.classList.add("active");
+    sta.classList.add("hide");
     we.classList.remove("we");
     ix.classList.remove("ix");
 
 
+    // BUTTONS...
     dark1.addEventListener("click", function () {
         banner.src = "img/GBA.jpg";
         animate();
@@ -88,7 +97,9 @@ graphics.addEventListener("click", function () {
         dark2.classList.remove("light");
         dark3.classList.remove("light");
 
-        first.textContent = "A Youth Alive fellowship design themed: God's Battle Axe - One of my outputs...";
+        first.classList.add("f1");
+        first2.classList.remove("f2");
+        first3.classList.remove("f3");
     })
     
     dark2.addEventListener("click", function () {
@@ -99,7 +110,10 @@ graphics.addEventListener("click", function () {
         dark1.classList.remove("dark");
         dark3.classList.remove("light");
 
-        first.textContent = "Why not bring Christ your broken life - He can remould you and make you brand new...";
+        first2.classList.add("f2");
+        first.classList.add("hide");
+        first.classList.remove("f1");
+        first3.classList.remove("f3");
     })
     
     dark3.addEventListener("click", function () {
@@ -110,7 +124,10 @@ graphics.addEventListener("click", function () {
         dark1.classList.remove("dark");
         dark2.classList.remove("light");
 
-        first.textContent = "Hiiiiiiiiiiiiii";
+        first3.classList.add("f3");
+        first.classList.add("hide");
+        first.classList.remove("f1");
+        first2.classList.remove("f2");
     })
 })
 
@@ -128,18 +145,23 @@ web.addEventListener("click", function () {
     graphics.classList.remove("active");
     uix.classList.remove("active");
 
-    // edit.textContent = "Web Dev Deign"
+    // Commands to display the contents of Web section and hide unrelated parts...
     we.classList.add("we");
-    sta.classList.add("active");
+    sta.classList.add("hide");
     gd.classList.remove("gd");
     ix.classList.remove("ix");
 
 
+    // BUTTONS...
     dark4.addEventListener("click", function () {
-        banner2.src = "img/web2.png";
+        banner2.src = "img/web1.png";
         dark4.classList.add("light");
         dark5.classList.remove("light");
         dark6.classList.remove("light");
+
+        second.classList.add("s1");
+        second2.classList.remove("s2");
+        second3.classList.remove("s3");
     })
     
     dark5.addEventListener("click", function () {
@@ -148,6 +170,11 @@ web.addEventListener("click", function () {
         dark4.classList.remove("light");
         dark4.classList.remove("dark");
         dark6.classList.remove("light");
+
+        second2.classList.add("s2");
+        second.classList.add("hide");
+        second.classList.remove("s1")
+        second3.classList.remove("s3")
     })
     
     dark6.addEventListener("click", function () {
@@ -156,6 +183,11 @@ web.addEventListener("click", function () {
         dark4.classList.remove("light");
         dark4.classList.remove("dark");
         dark5.classList.remove("light");
+
+        second3.classList.add("s3");
+        second.classList.add("hide");
+        second.classList.remove("s1")
+        second2.classList.remove("s2")
     })
 })
 
@@ -173,8 +205,9 @@ uix.addEventListener("click", function () {
     web.classList.remove("active");
     graphics.classList.remove("active");
 
+    // Commands to display the contents of UI/UX section and hide unrelated parts...    
     ix.classList.add("ix");
-    sta.classList.add("active");
+    sta.classList.add("hide");
     gd.classList.remove("gd");
     we.classList.remove("we");
 })
@@ -186,4 +219,4 @@ function animate() {
     setTimeout(() => {
         banner.classList.remove('zoom');
     }, 500);
-}   
+}
