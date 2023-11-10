@@ -62,7 +62,8 @@ start.addEventListener("click", function () {
     uix.classList.remove("active");
 
     // gd.style.display = "none";
-    sta.classList.remove("active")
+    sta.classList.add("active");
+    sta.classList.add("hide");
     gd.classList.remove("gd");
     we.classList.remove("we");
     ix.classList.remove("ix");
@@ -77,13 +78,14 @@ graphics.addEventListener("click", function () {
     
     // Commands for when one is active on Graphics section...
     graphics.classList.add("active");
-    // start.classList.remove("active");
+    start.classList.remove("active");
     start.classList.remove("act");
     web.classList.remove("active");
     uix.classList.remove("active");
 
     // Commands to display the contents of Graphics section and hide unrelated parts...
     gd.classList.add("gd");
+    sta.classList.remove("active");
     sta.classList.add("hide");
     we.classList.remove("we");
     ix.classList.remove("ix");
@@ -147,6 +149,7 @@ web.addEventListener("click", function () {
 
     // Commands to display the contents of Web section and hide unrelated parts...
     we.classList.add("we");
+    sta.classList.remove("active");
     sta.classList.add("hide");
     gd.classList.remove("gd");
     ix.classList.remove("ix");

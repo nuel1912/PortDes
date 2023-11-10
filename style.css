@@ -210,7 +210,8 @@ nav ol li:hover {
     transform: translateY(-3px);
 }
 .act {
-    font-weight: 800;   
+    font-weight: 800;
+    /* color: #010a17; */
 }
 .line {
     width: 3%;
@@ -238,22 +239,23 @@ nav ol li:hover {
 /* For Start Nav-link... */
 .sta h2 {
     color: #e2e0e0;
-    font-size: 120px;
-    padding: 0 16px;
+    font-size: 100px;
+    /* padding: 0 16px; */
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 .sta span {
-    background: #e2e0e0;
+    color: transparent;
+    -webkit-text-stroke: 1px #e2e0e0;
+    /* background: #e2e0e0; */
     border-radius: 30px;
-    color: #010a17;
-    padding: 0 16px;
+    /* padding: 0 16px; */
 }
 
 /* When in another Nav-link, Start should display none...*/
-/* .sta.active{
-    display: none;
-} */
+.sta.active{
+    display: block;
+}
 
 
 .gd2, .we2, .uix2 {
